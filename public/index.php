@@ -3,9 +3,9 @@
 require_once "../vendor/autoload.php";
 
 use Valen\HttpNotFoundException;
+use Valen\PhpNativeServer;
 use Valen\Request;
 use Valen\Router;
-use Valen\Server;
 
 $router = new Router;
 
@@ -18,7 +18,7 @@ $router->post('/test', function(){
 });
 
 try {
-    $route = $router->resolve(new Request(new Server()));
+    $route = $router->resolve(new Request(new PhpNativeServer()));
     $action = $route->action();
     print($action());
 } catch (HttpNotFoundException $e) {
