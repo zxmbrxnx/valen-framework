@@ -9,7 +9,7 @@
         }
     },
     "scripts": {
-        "tests": "phpunit --color=always -v tests/"
+        "tests": "phpunit --color=always --testdox -v tests/"
     },
     "autoload-dev": {
         "psr-4": {

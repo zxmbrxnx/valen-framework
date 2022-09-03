@@ -3,7 +3,6 @@
 require_once "../vendor/autoload.php";
 
 use Valen\HttpNotFoundException;
-use Valen\Route;
 use Valen\Router;
 
 $router = new Router;

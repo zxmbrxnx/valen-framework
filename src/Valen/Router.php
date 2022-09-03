@@ -17,6 +17,14 @@ class Router{
         }
     }
 
+    /**
+     * It loops through the routes array, and if the route matches the uri, it returns the route.
+     * 
+     * @param string uri The URI that was requested.
+     * @param string method The HTTP method of the request.
+     * 
+     * @return The route object.
+     */
     public function resolve(string $uri, string $method){
         foreach ($this->routes[$method] as $route) {
             if ($route->matches($uri)) {
@@ -26,6 +34,13 @@ class Router{
         throw new HttpNotFoundException();
     }
 
+    /**
+     * It takes a HTTP method, a URI, and a closure, and adds it to the routes array.
+     * 
+     * @param HttpMethod method The HTTP method of the request.
+     * @param string uri The URI to be matched.
+     * @param Closure action The closure that will be executed when the route is matched.
+     */
     protected function registerRoute(HttpMethod $method, string $uri, Closure $action){
         $this->routes[$method->value][] = new Route($uri, $action);
     }
