@@ -3,7 +3,7 @@
 namespace Valen\Test;
 
 use PHPUnit\Framework\TestCase;
-use Valen\Route;
+use Valen\Routing\Route;
 
 class RoutesTest extends TestCase{
 

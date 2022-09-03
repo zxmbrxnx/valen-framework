@@ -1,6 +1,6 @@
 <?php
 
-namespace Valen;
+namespace Valen\Http;
 
 enum HttpMethod: String {
     case GET = "GET";

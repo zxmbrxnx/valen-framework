@@ -1,6 +1,8 @@
 <?php
 
-namespace Valen;
+namespace Valen\Server;
+
+use Valen\Http\HttpMethod;
 
 interface Server {
     public function requestUri(): string;

@@ -3,10 +3,10 @@
 namespace Valen\Test;
 
 use PHPUnit\Framework\TestCase;
-use Valen\HttpMethod;
-use Valen\Request;
-use Valen\Router;
-use Valen\Server;
+use Valen\Http\HttpMethod;
+use Valen\Http\Request;
+use Valen\Routing\Router;
+use Valen\Server\Server;
 
 class RouterTest extends TestCase {
 

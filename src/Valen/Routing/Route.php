@@ -1,6 +1,6 @@
 <?php
 
-namespace Valen;
+namespace Valen\Routing;
 
 class Route {
 

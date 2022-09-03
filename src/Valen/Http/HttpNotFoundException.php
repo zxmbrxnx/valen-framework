@@ -1,6 +1,6 @@
 <?php
 
-namespace Valen;
+namespace Valen\Http;
 use Exception;
 
 class HttpNotFoundException extends Exception{

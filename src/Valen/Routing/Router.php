@@ -1,8 +1,11 @@
 <?php
 
-namespace Valen;
+namespace Valen\Routing;
 
 use Closure;
+use Valen\Http\HttpMethod;
+use Valen\Http\HttpNotFoundException;
+use Valen\Http\Request;
 
 class Router{
 

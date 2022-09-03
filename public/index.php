@@ -1,11 +1,13 @@
 <?php
 
+use Valen\Http\HttpNotFoundException;
+use Valen\Http\Request;
+use Valen\Routing\Router;
+use Valen\Server\PhpNativeServer;
+
 require_once "../vendor/autoload.php";
 
-use Valen\HttpNotFoundException;
-use Valen\PhpNativeServer;
-use Valen\Request;
-use Valen\Router;
+
 
 $router = new Router;
 

@@ -1,6 +1,8 @@
 <?php
 
-namespace Valen;
+namespace Valen\Server;
+
+use Valen\Http\HttpMethod;
 
 class PhpNativeServer implements Server{
 

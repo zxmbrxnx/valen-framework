@@ -1,6 +1,8 @@
 <?php
 
-namespace Valen;
+namespace Valen\Http;
+
+use Valen\Server\Server;
 
 class Request{
 
