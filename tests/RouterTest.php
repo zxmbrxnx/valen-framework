@@ -6,8 +6,17 @@ use PHPUnit\Framework\TestCase;
 use Valen\HttpMethod;
 use Valen\Request;
 use Valen\Router;
+use Valen\Server;
 
 class RouterTest extends TestCase {
+
+    private function createMockRequest(string $uri, HttpMethod $method): Request{
+        $mock = $this->getMockBuilder(Server::class)->getMock();
+        $mock->method('RequestUri')->willReturn($uri);
+        $mock->method('RequestMethod')->willReturn($method);
+
+        return new Request($mock);
+    }
     
     /**
      * "It should return the callback action when the route is resolved."
@@ -27,7 +36,7 @@ class RouterTest extends TestCase {
         $router = new Router();
         $router->get($uri, $action);
 
-        $route = $router->resolve(new Request(new MockServer($uri, HttpMethod::GET)));
+        $route = $router->resolve($this->createMockRequest($uri, HttpMethod::GET));
         $this->assertEquals($action, $route->action());
         $this->assertEquals($uri, $route->uri());
     }
@@ -50,7 +59,7 @@ class RouterTest extends TestCase {
         }
 
         foreach ($routes as $uri => $action) {
-            $route = $router->resolve(new Request(new MockServer($uri, HttpMethod::GET)));
+            $route = $router->resolve($this->createMockRequest($uri, HttpMethod::GET));
             $this->assertEquals($action, $route->action());
             $this->assertEquals($uri, $route->uri());
         }
@@ -82,7 +91,7 @@ class RouterTest extends TestCase {
         }
 
         foreach ($routes as [$method,$uri,$action]) {
-            $route = $router->resolve(new Request(new MockServer($uri, $method)));
+            $route = $router->resolve($this->createMockRequest($uri, $method));
             $this->assertEquals($action, $route->action());
             $this->assertEquals($uri, $route->uri());
         }
