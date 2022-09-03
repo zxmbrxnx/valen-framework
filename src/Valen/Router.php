@@ -21,10 +21,7 @@ class Router{
      * 
      * @return The action is being returned.
      */
-    public function resolve(){
-
-        $method = $_SERVER["REQUEST_METHOD"];
-        $uri = $_SERVER["REQUEST_URI"];
+    public function resolve(string $uri, string $method){
 
         $action = $this->routes[$method][$uri] ?? null;
 

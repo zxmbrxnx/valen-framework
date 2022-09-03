@@ -8,11 +8,21 @@
             "Valen\\": "src/Valen"
         }
     },
+    "scripts": {
+        "tests": "phpunit --color=always -v tests/"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Valen\\Test\\": "tests"
+        }
+    },
     "authors": [
         {
             "name": "Jhonatan Zambrano",
             "email": "zambranojhonatan20@gmail.com"
         }
     ],
-    "require": {}
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
 }
