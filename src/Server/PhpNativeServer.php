@@ -24,7 +24,6 @@ class PhpNativeServer implements Server{
     }
 
     public function sendResponse(Response $response){
-
         /* Removing the default content type header that PHP adds to all responses. */
         header("Content-Type: None");
         header_remove("Content-Type");
