@@ -3,7 +3,9 @@
 require_once "../vendor/autoload.php";
 
 use Valen\HttpNotFoundException;
+use Valen\Request;
 use Valen\Router;
+use Valen\Server;
 
 $router = new Router;
 
@@ -16,7 +18,7 @@ $router->post('/test', function(){
 });
 
 try {
-    $route = $router->resolve($_SERVER["REQUEST_URI"],$_SERVER["REQUEST_METHOD"]);
+    $route = $router->resolve(new Request(new Server()));
     $action = $route->action();
     print($action());
 } catch (HttpNotFoundException $e) {
